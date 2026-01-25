@@ -3,7 +3,7 @@
 @section('content')
 <div class="max-w-4xl mx-auto py-10 px-4">
     <div class="bg-white rounded-3xl shadow-sm p-8 border border-gray-100">
-        <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">⚙️ Pengaturan API</h2>
+        <h2 class="text-2xl font-bold mb-6 flex items-center gap-2">Pengaturan API</h2>
         
         @if(session('success'))
             <div class="bg-green-100 text-green-700 p-4 rounded-xl mb-6">{{ session('success') }}</div>

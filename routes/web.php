@@ -9,6 +9,13 @@ Route::get('/', function () {
     return view('welcome', compact('articles'));
 });
 
+
+Route::get('/deteksi', function () {
+    return view('detection');
+});
+
+Route::get('/artikel/{id}', [App\Http\Controllers\AdminController::class, 'showArticle'])->name('articles.show');
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

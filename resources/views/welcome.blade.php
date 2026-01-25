@@ -17,7 +17,7 @@
             </div>
         </div>
         <div class="order-1 md:order-2">
-            <img src="https://illustrations.popsy.co/blue/mother-with-child.svg" alt="Hero" class="w-full max-w-sm mx-auto">
+            <img src="https://www.inibalikpapan.com/wp-content/uploads/2020/08/anaka.jpg" alt="Hero" class="w-full max-w-lg rounded-lg mx-auto">
         </div>
     </div>
 </section>
@@ -43,10 +43,15 @@
     <h2 class="text-3xl font-bold text-center mb-12">Informasi Terbaru</h2>
     <div class="grid md:grid-cols-3 gap-8">
         @foreach($articles as $article)
+        <a href="{{ route('articles.show', $article->id) }}" class="group">
         <div class="p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
-            <h3 class="font-bold text-xl mb-3 text-blue-600">{{ $article->title }}</h3>
-            <p class="text-gray-600">{{ Str::limit($article->content, 100) }}</p>
+            @if($article->image)
+                <img src="{{ asset('storage/' . $article->image) }}" class="w-full h-[300px] object-cover rounded-lg">
+            @endif
+            <h3 class="font-bold text-xl mb-3 text-blue-600 truncate">{{ $article->title }}</h3>
+            <p class="text-gray-600 truncate">{{ Str::limit($article->content, 100) }}</p>
         </div>
+        </a>
         @endforeach
     </div>
 </section>

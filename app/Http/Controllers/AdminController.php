@@ -16,7 +16,13 @@ class AdminController extends Controller
         $stats = [
             'articles' => Article::count(),
             'users' => User::count(),
-            'token' => Setting::where('key', 'nvidia_token')->first()?->value ?? 'Belum diatur'
+            'token' => Setting::where('key', 'nvidia_token')->first()?->value ?? 'Belum diatur',
+            'total_articles' => \App\Models\Article::count(),
+            'total_users'    => \App\Models\User::count(),
+            'latest_articles' => \App\Models\Article::latest()->take(5)->get(),
+            'latest_users'    => \App\Models\User::latest()->take(5)->get(),
+            'total_detections' => 120, 
+            'api_status'     => 'Connected'
         ];
         return view('admin.dashboard', compact('stats'));
     }
@@ -171,5 +177,13 @@ class AdminController extends Controller
         $user->save();
 
         return redirect()->route('admin.users')->with('success', 'Data pengguna berhasil diperbarui!');
+    }
+
+    public function showArticle($id)
+    {
+        // Mengambil artikel berdasarkan ID, atau berikan error 404 jika tidak ditemukan
+        $article = Article::findOrFail($id);
+        
+        return view('admin.articles.show', compact('article'));
     }
 }

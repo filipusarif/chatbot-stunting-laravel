@@ -30,6 +30,9 @@
 </div>
 
 <script>
+    const nvidiaToken = "{{ \App\Models\Setting::where('key', 'nvidia_token')->first()?->value }}";
+    const fastApiUrl = "{{ config('services.fastapi.url') }}";
+
     const chatMessages = document.getElementById('chat-messages');
     const loadingIndicator = document.getElementById('loading-indicator');
 
@@ -50,10 +53,10 @@
         chatMessages.scrollTop = chatMessages.scrollHeight;
 
         try {
-            const response = await fetch('{{ config('services.fastapi.url') }}/api/chat', {
+            const response = await fetch(`${fastApiUrl}/api/chat`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ message: message })
+                body: JSON.stringify({ message: message, token: nvidiaToken })
             });
             const data = await response.json();
             
