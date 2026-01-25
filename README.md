@@ -1,59 +1,139 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🍼 StuntingCare Web Platform (Laravel + Tailwind)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Platform web **StuntingCare** adalah sistem informasi yang dirancang untuk memberikan edukasi mengenai stunting dan layanan deteksi dini. Web ini berfungsi sebagai *frontend* utama dan panel kontrol admin untuk mengelola konten, pengguna, dan integrasi API ke backend AI.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### 🚀 Fitur Utama
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+#### **Halaman Publik**
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+* **Landing Page**: Antarmuka modern yang informatif mengenai pencegahan stunting.
+* **Deteksi Dini**: Layanan berbasis AI untuk pengecekan risiko stunting (terhubung ke FastAPI).
+* **Artikel Edukasi**: Portal informasi kesehatan terpercaya.
+* **Chatbot AI**: Asisten pintar yang menjawab pertanyaan seputar stunting secara *real-time*.
 
-## Learning Laravel
+#### **Panel Admin**
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+* **Dashboard Statistik**: Ringkasan jumlah artikel, pengguna, dan status sistem.
+* **Manajemen Artikel (CRUD)**: Kelola konten edukasi lengkap dengan fitur unggah gambar.
+* **Manajemen Pengguna (CRUD)**: Kelola akun pengguna dan hak akses administrator.
+* **API Settings**: Konfigurasi token NVIDIA NIM secara dinamis tanpa perlu mengubah kode sumber.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+### 🛠️ Tech Stack & Requirements
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+| Komponen | Teknologi |
+| --- | --- |
+| **Framework** | Laravel 12.x |
+| **Frontend Styling** | Tailwind CSS (Custom Config) |
+| **Interactivity** | Alpine.js |
+| **Database** | MySQL / MariaDB |
+| **PHP Version** | 8.2 atau lebih tinggi |
+| **Dependencies** | Laravel Breeze (Starter Kit) |
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### 📥 Instalasi & Setup
 
-## Contributing
+Ikuti langkah-langkah berikut untuk menjalankan proyek di lingkungan lokal Anda:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+1. **Clone Repository**
+```bash
+git clone https://github.com/filipusarif/chatbot-stunting-laravel.git
+cd hatbot-stunting-laravel
 
-## Code of Conduct
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-## Security Vulnerabilities
+2. **Instal Dependencies**
+```bash
+composer install
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+3. **Konfigurasi Environment**
+Salin file `.env.example` menjadi `.env` dan sesuaikan pengaturan database Anda:
+```bash
+cp .env.example .env
+
+```
+
+
+4. **Generate App Key**
+```bash
+php artisan key:generate
+
+```
+
+
+5. **Migrasi Database & Seeder**
+Jalankan perintah ini untuk membuat tabel dan akun admin default (`admin@gmail.com`):
+```bash
+php artisan migrate --seed
+
+```
+
+
+6. **Hubungkan Storage**
+Agar gambar artikel dapat diakses oleh publik:
+```bash
+php artisan storage:link
+
+```
+
+
+7. **Konfigurasi FastAPI**
+Buka file `.env` dan tambahkan URL backend FastAPI Anda:
+```env
+FASTAPI_BACKEND_URL=http://localhost:8001
+
+```
+
+
+
+---
+
+### 📂 Struktur Proyek
+
+```text
+.
+├── app/
+│   ├── Http/Controllers/   # Logika AdminController & Profile
+│   └── Models/             # Model Article, User, & Setting
+├── database/
+│   ├── migrations/         # Struktur tabel database
+│   └── seeders/            # Data awal (Admin & Settings)
+├── public/                 # Aset statis dan shortcut storage
+├── resources/
+│   └── views/
+│       ├── admin/          # Tampilan Dashboard, Users, Articles
+│       ├── auth/           # Tampilan Login & Register
+│       ├── components/     # Komponen Chatbot & UI
+│       └── layouts/        # Layout App dengan Sidebar dinamis
+└── routes/
+    └── web.php             # Definisi rute publik dan admin
+
+```
+
+---
+
+### 🔌 Integrasi Chatbot
+
+Frontend menggunakan JavaScript (Fetch API) untuk berkomunikasi dengan FastAPI. Token NVIDIA diambil secara dinamis dari tabel `settings` di database, sehingga admin dapat memperbarui token langsung dari panel kontrol tanpa menyentuh file `.env`.
+
+---
+
+### 🛠️ Cara Menjalankan
+
+Jalankan server Laravel:
+
+```bash
+php artisan serve
+
+```
+
+Akses aplikasi melalui browser di `http://localhost:8000`.
+
