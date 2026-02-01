@@ -125,15 +125,15 @@
             <div class="max-w-7xl mx-auto px-6 flex justify-between items-center flex-wrap gap-4">
                 <p class="font-bold uppercase tracking-tighter">© 2026 STUNTINGCARE</p>
                 <div class="flex gap-6 text-xs font-mono uppercase">
-                    <a href="/login" class="text-gray-400 hover:text-black transition-colors">[ Admin Access ]</a>
+                    <a href="/login" class="text-gray-400 hover:text-black transition-colors">[ Login ]</a>
                 </div>
             </div>
         </footer>
 
-        @include('components.chatbot-popup')
+        <!-- @include('components.chatbot-popup') -->
     @endif
 
-    @include('components.chatbot-popup')
+    <!-- @include('components.chatbot-popup') -->
     <script>
         function toggleMobileMenu() {
             // Anda bisa menambahkan logic sidebar mobile di sini jika perlu

@@ -73,9 +73,17 @@
             </form>
 
             <div class="mt-8 pt-6 border-t border-gray-100 text-center">
+                <p class="text-sm text-gray-500">
+                    Belum punya akun? 
+                    <a href="{{ route('register') }}" class="font-bold text-blue-600 hover:text-blue-500 transition">
+                        Daftar di sini
+                    </a>
+                </p>   
+                <div class="mt-4"> 
                 <a href="/" class="text-sm text-gray-500 hover:text-blue-600 transition">
                     ← Kembali ke Beranda
                 </a>
+                </div>
             </div>
         </div>
     </div>

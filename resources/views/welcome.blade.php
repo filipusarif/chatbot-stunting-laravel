@@ -12,7 +12,7 @@
                 Dapatkan informasi akurat dan deteksi dini risiko stunting menggunakan teknologi AI.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <a href="/deteksi" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:bg-blue-700 transition text-center">Mulai Deteksi</a>
+                <a href="/chat" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold shadow-lg hover:bg-blue-700 transition text-center">Mulai Deteksi</a>
                 <a href="#edukasi" class="px-8 py-4 border border-gray-300 rounded-xl font-bold hover:bg-gray-100 transition text-center">Pelajari</a>
             </div>
         </div>

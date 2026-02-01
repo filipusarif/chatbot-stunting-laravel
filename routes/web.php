@@ -3,6 +3,8 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ChatController;
+
 
 Route::get('/', function () {
     $articles = \App\Models\Article::latest()->get();
@@ -20,8 +22,16 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware(['auth', 'verified'])->prefix('admin')->group(function () {
 
+// Rute khusus USER (Halaman Chat)
+Route::middleware(['auth', 'role:user'])->group(function () {
+    Route::get('/chat', [ChatController::class, 'index'])->name('chat.index');
+    Route::get('/chat/{session}', [ChatController::class, 'show'])->name('chat.show'); // Lihat riwayat
+    Route::post('/chat/send', [ChatController::class, 'send'])->name('chat.send');
+});
+
+// Rute khusus ADMIN (Dashboard)
+Route::middleware(['auth', 'role:admin'])->prefix('admin')->group(function () {    
     // Dashboard
     Route::get('/dashboard', [AdminController::class, 'index'])->name('admin.dashboard');
 
