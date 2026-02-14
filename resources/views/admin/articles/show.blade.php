@@ -35,7 +35,7 @@
                 <h4 class="text-xl font-bold text-blue-900 mb-2">Punya Pertanyaan Lain?</h4>
                 <p class="text-blue-700">Tanyakan langsung pada Chatbot AI kami di pojok kanan bawah.</p>
             </div>
-            <a href="/deteksi" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-200">
+            <a href="{{ route('chat.index') }}" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-200">
                 Cek Deteksi Stunting
             </a>
         </div>

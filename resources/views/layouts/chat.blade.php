@@ -35,7 +35,7 @@
                 </div>
                 <div class="overflow-hidden">
                     <p class="text-sm font-bold text-gray-800 truncate leading-none">{{ auth()->user()->name }}</p>
-                    <p class="text-[10px] text-gray-400 font-bold uppercase mt-1">Orang Tua</p>
+                    <p class="text-[10px] text-gray-400 font-bold uppercase mt-1">Pengguna</p>
                 </div>
             </div>
         </div>

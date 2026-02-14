@@ -9,10 +9,10 @@
             </div>
         </div>
         <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900 tracking-tight">
-            Masuk ke Panel Admin
+            Masuk ke StuntingCare
         </h2>
         <p class="mt-2 text-center text-sm text-gray-600">
-            Khusus pengelola sistem StuntingCare
+            Mulai konsultasi cerdas si kecil 
         </p>
     </div>
 
@@ -31,7 +31,7 @@
                     <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Alamat Email</label>
                     <input id="email" type="email" name="email" :value="old('email')" required autofocus 
                         class="w-full border-2 border-gray-100 rounded-2xl p-4 focus:border-blue-500 outline-none transition @error('email') border-red-500 @enderror" 
-                        placeholder="admin@gmail.com">
+                        placeholder="email@gmail.com">
                     @error('email')
                         <p class="mt-2 text-xs text-red-500 italic">{{ $message }}</p>
                     @enderror

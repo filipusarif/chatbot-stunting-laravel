@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\ChatSession;
 use App\Models\Setting;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -21,7 +22,7 @@ class AdminController extends Controller
             'total_users'    => \App\Models\User::count(),
             'latest_articles' => \App\Models\Article::latest()->take(5)->get(),
             'latest_users'    => \App\Models\User::latest()->take(5)->get(),
-            'total_detections' => 120, 
+            'total_detections' => ChatSession::count(), 
             'api_status'     => 'Connected'
         ];
         return view('admin.dashboard', compact('stats'));

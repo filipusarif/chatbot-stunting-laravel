@@ -33,7 +33,7 @@
                 📊
             </div>
             <div>
-                <span class="text-sm text-gray-500 font-medium">Total Deteksi AI</span>
+                <span class="text-sm text-gray-500 font-medium">Total Percakapan AI</span>
                 <p class="text-2xl font-black text-gray-800">{{ $stats['total_detections'] }}</p>
             </div>
         </div>
